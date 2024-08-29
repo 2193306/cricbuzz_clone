@@ -1,6 +1,9 @@
-from app import create_app
 
-app = create_app()
+from flask import Flask
+from app.routes import main
+
+app = Flask(__name__)
+app.register_blueprint(main)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True)
