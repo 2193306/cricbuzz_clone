@@ -1,12 +1,15 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, request, jsonify
 
 main = Blueprint('main', __name__)
 
-@main.route('/')
-def home():
-    # Simulated in-memory data
-    matches = [
-        {"team1": "India", "team2": "Australia", "score": "250/7", "status": "In Progress"},
-        {"team1": "England", "team2": "New Zealand", "score": "180/3", "status": "In Progress"}
-    ]
-    return render_template('index.html', matches=matches)
+@main.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+
+    # Simple check for demonstration purposes
+    if username == 'username' and password == 'password':
+        return jsonify({'success': True})
+    else:
+        return jsonify({'success': False})
