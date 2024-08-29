@@ -1,0 +1,16 @@
+cricbuzz_clone/
+│
+├── app/
+│   ├── __init__.py           # Application factory and configuration
+│   ├── routes.py             # Defines routes and views
+│   ├── templates/            # HTML templates
+│   │   └── index.html        # Main UI template
+│   └── static/
+│       └── styles.css        # CSS for styling
+│
+├── tests/
+│   ├── test_routes.py        # Unit tests for the application
+│
+├── Dockerfile                # Docker configuration
+├── requirements.txt          # Python dependencies
+└── run.py                    # Application entry point

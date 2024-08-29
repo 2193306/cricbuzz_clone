@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricbuzz Clone</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Live Cricket Scores</h1>
+    <div class="matches">
+        {% for match in matches %}
+            <div class="match">
+                <h2>{{ match.team1 }} vs {{ match.team2 }}</h2>
+                <p>Score: {{ match.score }}</p>
+                <p>Status: {{ match.status }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
